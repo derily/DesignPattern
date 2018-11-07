@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 ﻿using System;
 
 namespace DesignPattern
@@ -10,3 +11,17 @@ namespace DesignPattern
         }
     }
 }
+=======
+﻿using System;
+
+namespace DesignPattern
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello World!");
+        }
+    }
+}
+>>>>>>> Stashed changes
