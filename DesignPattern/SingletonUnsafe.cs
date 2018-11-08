@@ -1,9 +1,10 @@
 ﻿using System;
 namespace DesignPattern
 {
-    public class SingletonUnsafe
+    //Bad code!Do not use!
+    public sealed class SingletonUnsafe
     {
-        private static SingletonUnsafe instance;
+        private static SingletonUnsafe instance=null;
         private SingletonUnsafe() { }
 
         public static SingletonUnsafe Instance
