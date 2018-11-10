@@ -57,9 +57,9 @@ namespace DesignPattern
             //Creating a Tiger Factory
             IAnimalFactory tigerFactory = new TigerFactory();
             //Createing a tiger using the factory method
-            IAnimal aTiger = tigerFactory.CreateAnimal();
-            aTiger.Speak();
-            aTiger.Action();
+            IAnimal aTiger = tigerFactory.MakeAnimal();
+            //aTiger.Speak();
+            //aTiger.Action();
 
             IAnimalFactory dogFactory = new DogFactory();
             IAnimal aDog = dogFactory.CreateAnimal();
