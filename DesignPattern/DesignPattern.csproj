@@ -8,5 +8,6 @@
   <ItemGroup>
     <Folder Include="PrototypePattern\" />
     <Folder Include="BuilderPattern\" />
+    <Folder Include="FactoryMethodPattern\" />
   </ItemGroup>
 </Project>
