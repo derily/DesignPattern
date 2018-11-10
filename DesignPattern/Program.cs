@@ -1,5 +1,6 @@
 ﻿using System;
 using DesignPattern.BuilderPattern;
+using DesignPattern.FactoryMethodPattern;
 using DesignPattern.PrototypePattern;
 
 namespace DesignPattern
@@ -40,6 +41,7 @@ namespace DesignPattern
             //Console.WriteLine($"Car is:{bc1.ModelName},and it's price is Rs.{bc1.Price}");
             #endregion
 
+            #region BuiderPattern
             Console.WriteLine("***Builder Pattern Demo***\n");
             Director director = new Director();
             IBuilder b1 = new Car("Ford");
@@ -47,6 +49,23 @@ namespace DesignPattern
             director.Construct(b1);
             Product p1 = b1.GetVehicle();
             p1.Show();
+            #endregion
+
+            #region FactoryMethodPattern
+            Console.WriteLine("***Factory Pattern Demo***\n");
+
+            //Creating a Tiger Factory
+            IAnimalFactory tigerFactory = new TigerFactory();
+            //Createing a tiger using the factory method
+            IAnimal aTiger = tigerFactory.CreateAnimal();
+            aTiger.Speak();
+            aTiger.Action();
+
+            IAnimalFactory dogFactory = new DogFactory();
+            IAnimal aDog = dogFactory.CreateAnimal();
+            aDog.Speak();
+            aDog.Action();
+            #endregion
 
             Console.Read();
         }
