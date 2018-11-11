@@ -3,6 +3,7 @@ using DesignPattern.AbstractFactoryPattern;
 using DesignPattern.BuilderPattern;
 using DesignPattern.FactoryMethodPattern;
 using DesignPattern.PrototypePattern;
+using DesignPattern.ProxyPattern;
 using DesignPattern.SimpleFactoryPattern;
 
 namespace DesignPattern
@@ -97,6 +98,11 @@ namespace DesignPattern
             petTiger.Action();
             #endregion
 
+            #region Proxy Pattern
+            Console.WriteLine("***Proxy Pattern Demo***\n");
+            Proxy px = new Proxy();
+            px.DoSomeWork();
+            #endregion
 
             Console.Read();
         }

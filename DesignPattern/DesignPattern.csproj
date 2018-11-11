@@ -11,5 +11,6 @@
     <Folder Include="FactoryMethodPattern\" />
     <Folder Include="SimpleFactoryPattern\" />
     <Folder Include="AbstractFactoryPattern\" />
+    <Folder Include="ProxyPattern\" />
   </ItemGroup>
 </Project>
