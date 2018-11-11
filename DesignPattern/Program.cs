@@ -102,6 +102,12 @@ namespace DesignPattern
             Console.WriteLine("***Proxy Pattern Demo***\n");
             Proxy px = new Proxy();
             px.DoSomeWork();
+
+            ICar car = new ProxyCar(new Driver(15));
+            car.DriveCar();
+
+            car = new ProxyCar(new Driver(25));
+            car.DriveCar();
             #endregion
 
             Console.Read();
