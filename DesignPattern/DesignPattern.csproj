@@ -9,5 +9,7 @@
     <Folder Include="PrototypePattern\" />
     <Folder Include="BuilderPattern\" />
     <Folder Include="FactoryMethodPattern\" />
+    <Folder Include="SimpleFactoryPattern\" />
+    <Folder Include="AbstractFactoryPattern\" />
   </ItemGroup>
 </Project>
