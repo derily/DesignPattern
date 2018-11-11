@@ -105,7 +105,6 @@ namespace DesignPattern
 
             ICar car = new ProxyCar(new Driver(15));
             car.DriveCar();
-
             car = new ProxyCar(new Driver(25));
             car.DriveCar();
             #endregion
