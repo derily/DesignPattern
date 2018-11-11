@@ -13,6 +13,7 @@ namespace DesignPattern.ProxyPattern
 
         public void DriveCar()
         {
+            //pre checking
             if(driver.Age<16){
                 Console.WriteLine("Sorry,the driver is too young to driver");
             }else{
