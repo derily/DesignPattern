@@ -1,6 +1,7 @@
 ﻿using System;
 using DesignPattern.AbstractFactoryPattern;
 using DesignPattern.BuilderPattern;
+using DesignPattern.DecoratorPattern;
 using DesignPattern.FactoryMethodPattern;
 using DesignPattern.PrototypePattern;
 using DesignPattern.ProxyPattern;
@@ -108,6 +109,14 @@ namespace DesignPattern
             car = new ProxyCar(new Driver(25));
             car.DriveCar();
             #endregion
+
+            Console.WriteLine("***Decorator pattern Demo...\n");
+            ConcreteComponent cc = new ConcreteComponent();
+
+
+            ConcreteDecoratorEx1 decoratorEx1 = new ConcreteDecoratorEx1();
+            decoratorEx1.SetTheComponent(cc);
+            decoratorEx1.MakeHouse();
 
             Console.Read();
         }
