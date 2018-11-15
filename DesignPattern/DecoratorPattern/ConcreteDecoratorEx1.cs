@@ -3,6 +3,10 @@ namespace DesignPattern.DecoratorPattern
 {
     public class ConcreteDecoratorEx1:AbstractDecorator
     {
+        public ConcreteDecoratorEx1(Component component)
+        {
+            base.SetTheComponent(component);
+        }
         public override void MakeHouse()
         {
             base.MakeHouse();

@@ -13,5 +13,7 @@
     <Folder Include="AbstractFactoryPattern\" />
     <Folder Include="ProxyPattern\" />
     <Folder Include="DecoratorPattern\" />
+    <Folder Include="AdapterPattern\" />
+    <Folder Include="FlyweightPattern\" />
   </ItemGroup>
 </Project>

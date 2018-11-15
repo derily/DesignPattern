@@ -1,8 +1,10 @@
 ﻿using System;
 using DesignPattern.AbstractFactoryPattern;
+using DesignPattern.AdapterPattern;
 using DesignPattern.BuilderPattern;
 using DesignPattern.DecoratorPattern;
 using DesignPattern.FactoryMethodPattern;
+using DesignPattern.FlyweightPattern;
 using DesignPattern.PrototypePattern;
 using DesignPattern.ProxyPattern;
 using DesignPattern.SimpleFactoryPattern;
@@ -114,10 +116,35 @@ namespace DesignPattern
             ConcreteComponent cc = new ConcreteComponent();
 
 
-            ConcreteDecoratorEx1 decoratorEx1 = new ConcreteDecoratorEx1();
-            decoratorEx1.SetTheComponent(cc);
+            ConcreteDecoratorEx1 decoratorEx1 = new ConcreteDecoratorEx1(cc);
+            //  decoratorEx1.SetTheComponent(cc);
             decoratorEx1.MakeHouse();
 
+            #region Adapter Pattern
+            CalculatorAdapter cal = new CalculatorAdapter();
+            Triangle t = new Triangle(20, 10);
+            Console.WriteLine($"Area of Triangle is:{cal.GetArea(t)} Square unit");
+
+
+            Rect r = new Rect(20, 10);
+            Console.WriteLine($"Area of Rectangle is :{r.CalculateAreaOfRectangle()}");
+            Triangle t0 = new Triangle(20, 10);
+            Console.WriteLine($"Area of Triangle is :{t0.CalculateAreaOfTriangle()} Square unit.");
+            RectInterface adapter = new TriangleAdapter(t0);
+            Console.WriteLine($"Area of Triangle using the triangle adapter is :{adapter.CalculateAreaOfRectangle()} square unit");
+            #endregion
+
+            Console.WriteLine("***Flyweight Pattern Demo***");
+            RobotFactory factory = new RobotFactory();
+            IRobot shape = factory.GetRobotFromFactory("Small");
+            shape.Print();
+            for (int i = 0; i < 2; i++)
+            {
+                shape = factory.GetRobotFromFactory("Small");
+                shape.Print();
+            }
+            int NumOfDistinctRobots = factory.TotalObjectsCreated;
+            Console.WriteLine($"Now,there has {NumOfDistinctRobots} Robots.");
             Console.Read();
         }
     }
