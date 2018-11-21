@@ -15,5 +15,6 @@
     <Folder Include="DecoratorPattern\" />
     <Folder Include="AdapterPattern\" />
     <Folder Include="FlyweightPattern\" />
+    <Folder Include="CompositePattern\" />
   </ItemGroup>
 </Project>

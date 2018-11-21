@@ -2,6 +2,7 @@
 using DesignPattern.AbstractFactoryPattern;
 using DesignPattern.AdapterPattern;
 using DesignPattern.BuilderPattern;
+using DesignPattern.CompositePattern;
 using DesignPattern.DecoratorPattern;
 using DesignPattern.FactoryMethodPattern;
 using DesignPattern.FlyweightPattern;
@@ -145,6 +146,32 @@ namespace DesignPattern
             }
             int NumOfDistinctRobots = factory.TotalObjectsCreated;
             Console.WriteLine($"Now,there has {NumOfDistinctRobots} Robots.");
+
+            Console.WriteLine("***Composite Pattern Demo***");
+            CompositeEmployee Principal = new CompositeEmployee("Derily(Principal)", "Planning-Supervising-Managing");
+            CompositeEmployee hodMaths = new CompositeEmployee("Mrs.S.Das(HOD-Maths)", "Maths");
+            CompositeEmployee hodCompSc = new CompositeEmployee("Mr. V.Sarcar(HOD-CSE)", "Computer Sc.");
+
+            Employee mathTeacher1 = new Employee("Math Teacher-1", "Maths");
+            Employee mathTeacher2 = new Employee("Math Teacher-2", "Maths");
+
+            Employee cseTeacher1 = new Employee("CSE Teacher-1", "Computer Sc.");
+            Employee cseTeacher2 = new Employee("CSE Teacher-2", "Computer Sc.");
+            Employee cseTeacher3 = new Employee("CSE Teacher-3", "Computer Sc.");
+
+            hodMaths.Add(mathTeacher1);
+            hodMaths.Add(mathTeacher2);
+
+            hodCompSc.Add(cseTeacher1);
+            hodCompSc.Add(cseTeacher2);
+            hodCompSc.Add(cseTeacher3);
+
+            Principal.Add(hodMaths);
+            Principal.Add(hodCompSc);
+
+            Console.WriteLine("\n Testing the structure of a Principal object");
+            Principal.PrintStructures();
+
             Console.Read();
         }
     }
